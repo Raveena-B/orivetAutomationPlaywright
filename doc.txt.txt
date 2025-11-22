@@ -1,0 +1,6 @@
+initialization - npm init -y
+                 npm install @playwright/test
+                 npx playwright install          
+run - npx playwright test tests/login.spec.js
+recoder - npx playwright codegen https://orivet.com/
+show report - npx playwright show-report

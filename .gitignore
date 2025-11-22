@@ -1,0 +1,29 @@
+# Node modules
+node_modules/
+
+# Playwright browser binaries
+playwright/.cache/
+.playwright/
+
+# Test reports
+playwright-report/
+test-results/
+blob-report/
+
+# Logs
+logs/
+*.log
+
+# Environment variables
+.env
+.env.*
+
+# System files
+.DS_Store
+Thumbs.db
+
+# Coverage
+coverage/
+
+# VS Code settings (optional)
+.vscode/
