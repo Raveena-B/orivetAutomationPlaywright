@@ -1,10 +1,16 @@
-// import { defineConfig } from "@playwright/test";
+import { defineConfig } from "@playwright/test";
 
-// export default defineConfig({
-//   reporter: [["html", { open: "never" }]],
-//   use: {
-//     trace: "on", // optional but recommended
-//     screenshot: "only-on-failure",
-//     video: "retain-on-failure",
-//   },
-// });
+export default defineConfig({
+  reporter: [["html", { open: "never" }]],
+  use: {
+    trace: "on", // optional but recommended
+    screenshot: "only-on-failure",
+    video: "retain-on-failure",
+  },
+
+  
+  use: {
+    launchOptions: { slowMo: 50 }, // optional: slow down actions for observation
+
+  }
+});
