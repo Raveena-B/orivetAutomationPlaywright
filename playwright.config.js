@@ -7,4 +7,10 @@ export default defineConfig({
     screenshot: "only-on-failure",
     video: "retain-on-failure",
   },
+
+  
+  use: {
+    launchOptions: { slowMo: 50 }, // optional: slow down actions for observation
+
+  }
 });
