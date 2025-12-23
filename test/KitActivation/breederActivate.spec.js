@@ -1,0 +1,31 @@
+import { test, expect } from '@playwright/test';
+
+test('test', async ({ page }) => {
+  await page.goto('https://www.orivet.com/');
+  await page.locator('.w-10').click();
+  await page.getByRole('link', { name: 'Login' }).click();
+  await page.getByRole('textbox', { name: 'Email (Username)' }).click();
+  await page.getByRole('textbox', { name: 'Email (Username)' }).fill('charlie');
+  await page.getByRole('textbox', { name: 'Password' }).click();
+  await page.getByRole('textbox', { name: 'Password' }).fill('Charlie2017');
+  await page.getByRole('button', { name: 'Login' }).click();
+  await page.getByRole('button', { name: 'Activate Kits' }).click();
+//   await page.getByLabel('').nth(3).check();
+  await page.getByRole('textbox', { name: 'Barcode Number', exact: true }).click();
+  await page.getByRole('textbox', { name: 'Barcode Number', exact: true }).fill('34553453534');
+  await page.getByRole('textbox', { name: 'Confirm Barcode Number' }).click();
+  await page.getByRole('textbox', { name: 'Confirm Barcode Number' }).fill('34553453534');
+  await page.getByRole('button', { name: 'Next' }).click();
+  await page.getByRole('textbox', { name: 'Select Breed' }).click();
+  await page.getByText('Akita').click();
+  await page.getByRole('textbox', { name: 'Select Animal' }).click();
+  await page.getByText('Shadow').click();
+  await page.getByText('Intact Male').click();
+  await page.locator('div').filter({ hasText: /^Intact Female$/ }).click();
+  await page.getByRole('button', { name: '/08/2025' }).click();
+  await page.getByRole('button', { name: 'Monday, August 4th,' }).click();
+  await page.getByRole('button', { name: 'Next', exact: true }).click();
+  await page.getByRole('button', { name: 'Activate Kit' }).click();
+  await page.getByRole('button', { name: 'Continue' }).click();
+  await page.getByRole('button', { name: 'We are done' }).click();
+});
