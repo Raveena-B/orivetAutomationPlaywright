@@ -6,11 +6,12 @@ export default defineConfig({
     trace: "on", // optional but recommended
     screenshot: "only-on-failure",
     video: "retain-on-failure",
+
   },
 
   
   use: {
-    launchOptions: { slowMo: 50 }, // optional: slow down actions for observation
+    launchOptions: { slowMo: 300 }, // optional: slow down actions for observation
 
   }
 });

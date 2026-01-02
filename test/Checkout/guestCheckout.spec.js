@@ -1,0 +1,31 @@
+import { test, expect } from '@playwright/test';
+
+test('test', async ({ page }) => {
+  await page.goto('https://www.orivet.com/');
+  await page.locator('.w-10').click();
+  await page.getByRole('link', { name: 'Breeder', exact: true }).click();
+  await page.getByRole('button', { name: 'ORDER NOW' }).nth(2).click();
+  await page.getByRole('button', { name: 'Go to checkout' }).click();
+  await page.getByLabel('', { exact: true }).check();
+  await page.getByRole('button', { name: 'Continue' }).click();
+  await page.getByRole('textbox', { name: 'Enter your first name' }).click();
+  await page.getByRole('textbox', { name: 'Enter your first name' }).fill('testing');
+  await page.getByRole('textbox', { name: 'Enter your last name' }).click();
+  await page.getByRole('textbox', { name: 'Enter your last name' }).fill('guestkit');
+  await page.getByRole('textbox', { name: 'Enter your shipping address' }).click();
+  await page.getByRole('textbox', { name: 'Enter your shipping address' }).fill('evtree');
+  await page.getByRole('textbox', { name: 'Enter your city' }).click();
+  await page.getByRole('textbox', { name: 'Enter your city' }).fill('34');
+  await page.getByRole('textbox', { name: 'Enter your postcode' }).click();
+  await page.getByRole('textbox', { name: 'Enter your postcode' }).fill('5678');
+  await page.getByRole('textbox', { name: 'Enter your phone number' }).click();
+  await page.getByRole('textbox', { name: 'Enter your phone number' }).fill('0745634455');
+  await page.getByRole('textbox', { name: 'Enter your email' }).click();
+  await page.getByRole('textbox', { name: 'Enter your email' }).fill('raveww@gmail.com');
+  await page.getByRole('textbox', { name: 'Enter coupon code' }).click();
+  await page.getByRole('textbox', { name: 'Enter coupon code' }).fill('testcouponcode78sy');
+  await page.getByRole('button', { name: 'Apply' }).click();
+  await page.getByRole('button', { name: 'Continue' }).click();
+  await page.getByRole('button', { name: 'Continue' }).click();
+  await page.getByRole('button', { name: 'BACK TO STORE' }).click();
+});
