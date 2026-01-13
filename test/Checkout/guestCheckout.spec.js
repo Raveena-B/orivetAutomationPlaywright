@@ -28,4 +28,11 @@ test('test', async ({ page }) => {
   await page.getByRole('button', { name: 'Continue' }).click();
   await page.getByRole('button', { name: 'Continue' }).click();
   await page.getByRole('button', { name: 'BACK TO STORE' }).click();
+
+  // ✅ Capture Order ID (UPDATE selector if needed)
+  const orderId = await page.locator(".order-id").innerText();
+
+  console.log("✅ Order ID:", orderId);
+
+  await page.getByRole("button", { name: "BACK TO STORE" }).click();
 });

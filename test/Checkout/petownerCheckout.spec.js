@@ -33,4 +33,11 @@ test("test", async ({ page }) => {
     .locator('[data-test-id="ai-welcome-msg-close-button"]')
     .click();
   await page.getByRole("button", { name: "BACK TO STORE" }).click();
+
+  // ✅ Capture Order ID (UPDATE selector if needed)
+  const orderId = await page.locator(".order-id").innerText();
+
+  console.log("✅ Order ID:", orderId);
+
+  await page.getByRole("button", { name: "BACK TO STORE" }).click();
 });
